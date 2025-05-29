@@ -59,4 +59,4 @@
         $dateToString: { format: "%Y-%m-%d", date: "$date_added" }
       } }
   } )
-- 
+- ![Output](6-1.PNG)
