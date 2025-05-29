@@ -46,4 +46,17 @@
 - ![Output](5-1.PNG)
 
 ### 3. Products Added in February 2023:
+- db.products.aggregate(
+  { $match: {
+      date_added: {
+        $gte: new Date("2023-02-01T00:00:00Z"),
+        $lt: new Date("2023-03-01T00:00:00Z") }
+    } },
+  { $project: {
+      name: 1,
+      category: 1,
+      formattedDateAdded: {
+        $dateToString: { format: "%Y-%m-%d", date: "$date_added" }
+      } }
+  } )
 - 
