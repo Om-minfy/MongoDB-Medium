@@ -22,4 +22,8 @@
 ## Medium Difficulty
 
 ### 1. Total Quantity of Products by Supplier:
-- 
+- db.products.aggregate(
+  { $group: {
+      _id: "$supplier.name",
+      totalQuantity: { $sum: "$quantity" } } 
+      } )
