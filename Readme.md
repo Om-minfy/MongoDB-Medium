@@ -27,3 +27,7 @@
       _id: "$supplier.name",
       totalQuantity: { $sum: "$quantity" } } 
       } )
+- ![Output](2-1.PNG)
+
+### 2. Average Price of Products per Tag:
+- 
