@@ -30,4 +30,14 @@
 - ![Output](2-1.PNG)
 
 ### 2. Average Price of Products per Tag:
-- 
+- db.products.aggregate(
+  { $unwind: "$tags" },
+  { $group: {
+      _id: "$tags",
+      averagePrice: { $avg: "$price" }
+    } },
+ {
+    $sort: {
+      averagePrice: -1
+    }
+  } )
